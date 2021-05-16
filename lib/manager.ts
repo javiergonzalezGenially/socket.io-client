@@ -123,10 +123,10 @@ interface EngineOptions {
    * Are we only interested in transports that support binary?
    */
   onlyBinaryUpgrades: boolean;
-  
+
   /**
    * Timeout for xhr-polling requests in milliseconds (0) (only for polling transport)
-   */  
+   */
   requestTimeout: number;
 
   /**
@@ -197,6 +197,13 @@ interface EngineOptions {
    * @default false
    */
   withCredentials: boolean;
+
+  /**
+   * Whether to (silently) close the connection when the [beforeunload](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event) event is emitted in the browser.
+   *
+   * @default true
+   */
+  closeOnBeforeunload: boolean;
 }
 
 export interface ManagerOptions extends EngineOptions {
